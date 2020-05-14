@@ -1,0 +1,306 @@
+[root@vps-3b1c2df1 ~]# date
+Thu May 14 08:58:01 CEST 2020
+
+[root@vps-3b1c2df1 ~]# cat /proc/cpuinfo
+processor   : 0
+vendor_id   : GenuineIntel
+cpu family  : 6
+model       : 58
+model name  : Intel Xeon E3-12xx v2 (Ivy Bridge, IBRS)
+stepping    : 9
+microcode   : 0x1
+cpu MHz     : 2599.998
+cache size  : 4096 KB
+physical id : 0
+siblings    : 1
+core id     : 0
+cpu cores   : 1
+apicid      : 0
+initial apicid  : 0
+fpu     : yes
+fpu_exception   : yes
+cpuid level : 13
+wp      : yes
+flags       : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx rdtscp lm constant_tsc rep_good nopl cpuid tsc_known_freq pni pclmulqdq vmx ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cpuid_fault pti ibrs ibpb tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt arat md_clear
+bugs        : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips    : 5199.99
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 40 bits physical, 48 bits virtual
+power management:
+
+[root@vps-3b1c2df1 ~]# cat /proc/meminfo
+MemTotal:        1988348 kB
+MemFree:         1318976 kB
+MemAvailable:    1513660 kB
+Buffers:          141692 kB
+Cached:           272116 kB
+SwapCached:            0 kB
+Active:           534388 kB
+Inactive:          59628 kB
+Active(anon):     253004 kB
+Inactive(anon):    35724 kB
+Active(file):     281384 kB
+Inactive(file):    23904 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:               100 kB
+Writeback:             0 kB
+AnonPages:        180232 kB
+Mapped:            47484 kB
+Shmem:            108520 kB
+KReclaimable:      41776 kB
+Slab:              56944 kB
+SReclaimable:      41776 kB
+SUnreclaim:        15168 kB
+KernelStack:        2588 kB
+PageTables:         5424 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      994172 kB
+Committed_AS:     546052 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:        8484 kB
+VmallocChunk:          0 kB
+Percpu:              280 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:     63488 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:         0 kB
+FilePmdMapped:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:       71536 kB
+DirectMap2M:     1976320 kB
+
+[root@vps-3b1c2df1 ~]# uptime
+ 08:55:44 up 5 days,  2:34,  2 users,  load average: 0.09, 0.13, 0.06
+
+[root@vps-3b1c2df1 ~]# systemctl list-units
+  UNIT                                                              LOAD   ACTIVE SUB       DESCRIPTION
+  proc-sys-fs-binfmt_misc.automount                                 loaded active waiting   Arbitrary Executable File Formats File System Automount Point
+  sys-devices-pci0000:00-0000:00:03.0-virtio0-net-eth0.device       loaded active plugged   Virtio network device
+  sys-devices-pci0000:00-0000:00:04.0-virtio1-host2-target2:0:0-2:0:0:0-block-sda-sda1.device loaded active plugged   QEMU_HARDDISK 1
+  sys-devices-pci0000:00-0000:00:04.0-virtio1-host2-target2:0:0-2:0:0:0-block-sda.device loaded active plugged   QEMU_HARDDISK
+  sys-devices-platform-serial8250-tty-ttyS2.device                  loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS2
+  sys-devices-platform-serial8250-tty-ttyS3.device                  loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS3
+  sys-devices-pnp0-00:04-tty-ttyS0.device                           loaded active plugged   /sys/devices/pnp0/00:04/tty/ttyS0
+  sys-devices-pnp0-00:05-tty-ttyS1.device                           loaded active plugged   /sys/devices/pnp0/00:05/tty/ttyS1
+  sys-module-configfs.device                                        loaded active plugged   /sys/module/configfs
+  sys-subsystem-net-devices-eth0.device                             loaded active plugged   Virtio network device
+  -.mount                                                           loaded active mounted   /
+  dev-hugepages.mount                                               loaded active mounted   Huge Pages File System
+  dev-mqueue.mount                                                  loaded active mounted   POSIX Message Queue File System
+  run-user-0.mount                                                  loaded active mounted   /run/user/0
+  sys-kernel-config.mount                                           loaded active mounted   Configuration File System
+  sys-kernel-debug.mount                                            loaded active mounted   Debug File System
+  systemd-ask-password-plymouth.path                                loaded active waiting   Forward Password Requests to Plymouth Directory Watch
+  systemd-ask-password-wall.path                                    loaded active waiting   Forward Password Requests to Wall Directory Watch
+  session-7208.scope                                                loaded active running   Session 7208 of user root
+  session-7259.scope                                                loaded active running   Session 7259 of user root
+  session-7596.scope                                                loaded active running   Session 7596 of user root
+  auditd.service                                                    loaded active running   Security Auditing Service
+  chronyd.service                                                   loaded active running   NTP client/server
+  cloud-config.service                                              loaded active exited    Apply the settings specified in cloud-config
+  cloud-final.service                                               loaded active exited    Execute cloud user/final scripts
+  cloud-init-local.service                                          loaded active exited    Initial cloud-init job (pre-networking)
+  cloud-init.service                                                loaded active exited    Initial cloud-init job (metadata service crawler)
+  crond.service                                                     loaded active running   Command Scheduler
+  dbus.service                                                      loaded active running   D-Bus System Message Bus
+  fikkerd.service                                                   loaded active running   SYSV: Fikker Webcache Bigbox Server.
+  getty@tty1.service                                                loaded active running   Getty on tty1
+● kdump.service                                                     loaded failed failed    Crash recovery kernel arming
+  kmod-static-nodes.service                                         loaded active exited    Create list of required static device nodes for the current kernel
+  network.service                                                   loaded active exited    LSB: Bring up/down networking
+  NetworkManager-wait-online.service                                loaded active exited    Network Manager Wait Online
+  NetworkManager.service                                            loaded active running   Network Manager
+  polkit.service                                                    loaded active running   Authorization Manager
+  postfix.service                                                   loaded active running   Postfix Mail Transport Agent
+  rhel-dmesg.service                                                loaded active exited    Dump dmesg to /var/log/dmesg
+  rhel-domainname.service                                           loaded active exited    Read and set NIS domainname from /etc/sysconfig/network
+  rhel-import-state.service                                         loaded active exited    Import network configuration from initramfs
+  rhel-readonly.service                                             loaded active exited    Configure read-only root support
+  rsyslog.service                                                   loaded active running   System Logging Service
+  sshd.service                                                      loaded active running   OpenSSH server daemon
+  systemd-fsck-root.service                                         loaded active exited    File System Check on Root Device
+  systemd-journal-flush.service                                     loaded active exited    Flush Journal to Persistent Storage
+  systemd-journald.service                                          loaded active running   Journal Service
+  systemd-logind.service                                            loaded active running   Login Service
+  systemd-random-seed.service                                       loaded active exited    Load/Save Random Seed
+  systemd-remount-fs.service                                        loaded active exited    Remount Root and Kernel File Systems
+  systemd-sysctl.service                                            loaded active exited    Apply Kernel Variables
+  systemd-tmpfiles-setup-dev.service                                loaded active exited    Create Static Device Nodes in /dev
+  systemd-tmpfiles-setup.service                                    loaded active exited    Create Volatile Files and Directories
+  systemd-udev-trigger.service                                      loaded active exited    udev Coldplug all Devices
+  systemd-udevd.service                                             loaded active running   udev Kernel Device Manager
+  systemd-update-utmp.service                                       loaded active exited    Update UTMP about System Boot/Shutdown
+  systemd-user-sessions.service                                     loaded active exited    Permit User Sessions
+  systemd-vconsole-setup.service                                    loaded active exited    Setup Virtual Console
+  tuned.service                                                     loaded active running   Dynamic System Tuning Daemon
+  -.slice                                                           loaded active active    Root Slice
+  system-getty.slice                                                loaded active active    system-getty.slice
+  system-selinux\x2dpolicy\x2dmigrate\x2dlocal\x2dchanges.slice     loaded active active    system-selinux\x2dpolicy\x2dmigrate\x2dlocal\x2dchanges.slice
+  system.slice                                                      loaded active active    System Slice
+  user-0.slice                                                      loaded active active    User Slice of root
+  user.slice                                                        loaded active active    User and Session Slice
+  dbus.socket                                                       loaded active running   D-Bus System Message Bus Socket
+  systemd-initctl.socket                                            loaded active listening /dev/initctl Compatibility Named Pipe
+  systemd-journald.socket                                           loaded active running   Journal Socket
+  systemd-shutdownd.socket                                          loaded active listening Delayed Shutdown Socket
+  systemd-udevd-control.socket                                      loaded active running   udev Control Socket
+  systemd-udevd-kernel.socket                                       loaded active running   udev Kernel Socket
+  basic.target                                                      loaded active active    Basic System
+  cloud-config.target                                               loaded active active    Cloud-config availability
+  cryptsetup.target                                                 loaded active active    Local Encrypted Volumes
+  getty.target                                                      loaded active active    Login Prompts
+  local-fs-pre.target                                               loaded active active    Local File Systems (Pre)
+  local-fs.target                                                   loaded active active    Local File Systems
+  multi-user.target                                                 loaded active active    Multi-User System
+  network-online.target                                             loaded active active    Network is Online
+  network-pre.target                                                loaded active active    Network (Pre)
+  network.target                                                    loaded active active    Network
+  paths.target                                                      loaded active active    Paths
+  remote-fs.target                                                  loaded active active    Remote File Systems
+  slices.target                                                     loaded active active    Slices
+  sockets.target                                                    loaded active active    Sockets
+  swap.target                                                       loaded active active    Swap
+  sysinit.target                                                    loaded active active    System Initialization
+  timers.target                                                     loaded active active    Timers
+  systemd-tmpfiles-clean.timer                                      loaded active waiting   Daily Cleanup of Temporary Directories
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+
+89 loaded units listed. Pass --all to see loaded but inactive units, too.
+To show all installed unit files use 'systemctl list-unit-files'.
+
+
+[root@vps-3b1c2df1 ~]# ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet [在GitHub上隐去IP地址 ^_^]  netmask 255.255.255.255  broadcast 147.135.112.153
+        inet6 2604:2dc0:101:200::423  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::f816:3eff:feb9:4c8e  prefixlen 64  scopeid 0x20<link>
+        ether fa:16:3e:b9:4c:8e  txqueuelen 1000  (Ethernet)
+        RX packets 4021222  bytes 3333968104 (3.1 GiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2806485  bytes 2897756774 (2.6 GiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 96  bytes 6781 (6.6 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 96  bytes 6781 (6.6 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[root@vps-3b1c2df1 ~]# route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         gateway         0.0.0.0         UG    100    0        0 eth0
+gateway         0.0.0.0         255.255.255.255 UH    100    0        0 eth0
+[在GitHub上隐去主机名 ^_^] 0.0.0.0         255.255.255.255 UH    100    0        0 eth0
+
+[root@vps-3b1c2df1 ~]# arp -a
+gateway ([在GitHub上隐去IP地址 ^_^]) at 8a:8b:f0:fb:ee:b9 [ether] on eth0
+
+[root@vps-3b1c2df1 ~]# ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.2 125336  5168 ?        Ss   May09   1:08 /usr/lib/systemd/systemd --switched-root --system --deserialize 22
+root         2  0.0  0.0      0     0 ?        S    May09   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        I<   May09   0:00 [rcu_gp]
+root         4  0.0  0.0      0     0 ?        I<   May09   0:00 [rcu_par_gp]
+root         6  0.0  0.0      0     0 ?        I<   May09   0:00 [kworker/0:0H-kb]
+root         8  0.0  0.0      0     0 ?        I<   May09   0:00 [mm_percpu_wq]
+root         9  0.0  0.0      0     0 ?        S    May09   0:14 [ksoftirqd/0]
+root        10  0.0  0.0      0     0 ?        R    May09   1:20 [rcu_sched]
+root        11  0.0  0.0      0     0 ?        S    May09   0:03 [migration/0]
+root        13  0.0  0.0      0     0 ?        S    May09   0:00 [cpuhp/0]
+root        14  0.0  0.0      0     0 ?        S    May09   0:00 [kdevtmpfs]
+root        15  0.0  0.0      0     0 ?        I<   May09   0:00 [netns]
+root        16  0.0  0.0      0     0 ?        S    May09   0:05 [kauditd]
+root        17  0.0  0.0      0     0 ?        S    May09   0:00 [khungtaskd]
+root        18  0.0  0.0      0     0 ?        S    May09   0:00 [oom_reaper]
+root        19  0.0  0.0      0     0 ?        I<   May09   0:00 [writeback]
+root        20  0.0  0.0      0     0 ?        S    May09   0:00 [kcompactd0]
+root        21  0.0  0.0      0     0 ?        SN   May09   0:00 [ksmd]
+root        22  0.0  0.0      0     0 ?        SN   May09   0:08 [khugepaged]
+root       112  0.0  0.0      0     0 ?        I<   May09   0:00 [kintegrityd]
+root       113  0.0  0.0      0     0 ?        I<   May09   0:00 [kblockd]
+root       114  0.0  0.0      0     0 ?        I<   May09   0:00 [blkcg_punt_bio]
+root       115  0.0  0.0      0     0 ?        I<   May09   0:00 [tpm_dev_wq]
+root       116  0.0  0.0      0     0 ?        I<   May09   0:00 [md]
+root       117  0.0  0.0      0     0 ?        I<   May09   0:00 [edac-poller]
+root       118  0.0  0.0      0     0 ?        I<   May09   0:00 [devfreq_wq]
+root       119  0.0  0.0      0     0 ?        S    May09   0:00 [watchdogd]
+root       120  0.0  0.0      0     0 ?        S    May09   0:00 [kswapd0]
+root       123  0.0  0.0      0     0 ?        I<   May09   0:00 [kthrotld]
+root       124  0.0  0.0      0     0 ?        I<   May09   0:00 [acpi_thermal_pm]
+root       125  0.0  0.0      0     0 ?        I<   May09   0:00 [kmpath_rdacd]
+root       126  0.0  0.0      0     0 ?        I<   May09   0:00 [kaluad]
+root       127  0.0  0.0      0     0 ?        I<   May09   0:00 [ipv6_addrconf]
+root       128  0.0  0.0      0     0 ?        I<   May09   0:00 [kstrp]
+root       139  0.0  0.0      0     0 ?        I<   May09   0:00 [charger_manager]
+root       140  0.0  0.0      0     0 ?        I<   May09   0:00 [kworker/u3:0]
+root       312  0.0  0.0      0     0 ?        I<   May09   0:00 [ata_sff]
+root       313  0.0  0.0      0     0 ?        S    May09   0:00 [scsi_eh_0]
+root       314  0.0  0.0      0     0 ?        I<   May09   0:00 [scsi_tmf_0]
+root       315  0.0  0.0      0     0 ?        S    May09   0:00 [scsi_eh_1]
+root       316  0.0  0.0      0     0 ?        I<   May09   0:00 [scsi_tmf_1]
+root       355  0.0  0.0      0     0 ?        S    May09   0:00 [scsi_eh_2]
+root       356  0.0  0.0      0     0 ?        I<   May09   0:00 [scsi_tmf_2]
+root       360  0.0  0.0      0     0 ?        I<   May09   0:06 [kworker/0:1H-kb]
+root       375  0.0  0.0      0     0 ?        S    May09   0:12 [jbd2/sda1-8]
+root       376  0.0  0.0      0     0 ?        I<   May09   0:00 [ext4-rsv-conver]
+root       444  0.0  0.4  39096  8704 ?        Ss   May09   2:26 /usr/lib/systemd/systemd-journald
+root       471  0.0  0.1  45292  3400 ?        Ss   May09   0:00 /usr/lib/systemd/systemd-udevd
+root       504  0.0  0.1  55532  2576 ?        S<sl May09   0:28 /sbin/auditd
+dbus       529  0.0  0.2  58268  4480 ?        Ss   May09   0:50 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+root       531  0.0  0.1  26388  2940 ?        Ss   May09   0:24 /usr/lib/systemd/systemd-logind
+polkitd    532  0.0  0.8 613012 17556 ?        Ssl  May09   0:16 /usr/lib/polkit-1/polkitd --no-debug
+chrony     542  0.0  0.1 117796  3692 ?        S    May09   0:01 /usr/sbin/chronyd
+root       574  0.0  0.0      0     0 ?        I<   May09   0:00 [cryptd]
+root       749  0.0  0.6 547556 13256 ?        Ssl  May09   0:23 /usr/sbin/NetworkManager --no-daemon
+root      1010  0.0  0.0      0     0 ?        I<   04:37   0:00 [dio/sda1]
+root      1121  0.0  1.1 573936 22000 ?        Ssl  May09   1:11 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+root      1376  0.0  0.2  89664  4796 ?        Ss   May09   0:03 /usr/libexec/postfix/master -w
+postfix   1379  0.0  0.3  89836  6628 ?        S    May09   0:00 qmgr -l -t unix -u
+root      1418  0.0  0.3 112876  7788 ?        Ss   May09   0:41 /usr/sbin/sshd -D
+root      1421  0.0  1.1 314724 22536 ?        Ssl  May09   1:34 /usr/sbin/rsyslogd -n
+root      1435  0.0  0.1 126296  3152 ?        Ss   May09   0:05 /usr/sbin/crond -n
+root      1448  0.0  0.0 110116  1700 tty1     Ss+  May09   0:00 /sbin/agetty --noclear tty1 linux
+root      1454  0.0  0.0   4216  1184 ?        S    May09   0:27 ./fikkerd.monitor
+root      1455  0.0  6.9 861536 137324 ?       Sl   May09   1:52 ./fikkerd
+root      3464  0.0  0.0      0     0 ?        I    10:38   0:00 [kworker/0:0-eve]
+root     10596  0.0  0.3 178664  7168 pts/0    S+   08:41   0:00 ssh 51.178.204.111
+root     11647  0.0  0.4 158884  9024 ?        Ss   04:27   0:00 sshd: root@pts/0
+root     11748  0.0  0.1 115840  3724 pts/0    Ss   04:27   0:00 -bash
+root     16004  0.0  0.1 107476  2896 ?        Ss   04:29   0:00 dhclient
+root     16026  0.0  0.0      0     0 ?        I    May13   0:00 [kworker/u2:0-ev]
+root     16366  0.0  0.0      0     0 ?        I    10:44   0:00 [kworker/0:2-eve]
+root     19182  0.0  0.0      0     0 ?        R    05:15   0:00 [kworker/u2:2-ev]
+root     19382  0.0  0.4 158884  9124 ?        Ss   05:15   0:00 sshd: root@pts/1
+root     19483  0.0  0.1 115720  3776 pts/1    Ss   05:15   0:00 -bash
+postfix  21664  0.0  0.3  89768  6528 ?        S    09:46   0:00 pickup -l -t unix -u
+root     22780  0.0  0.0      0     0 ?        I    10:31   0:00 [kworker/0:1-cgr]
+root     23046  0.0  0.1 178828  3232 ?        Ss   05:17   0:06 ssh -gfNL 10022:[2602:ffd5:1:11c::1]:22 root@2602:ffd5:1:11c::1
+root     24999  0.0  0.2 182372  4576 ?        S    10:48   0:00 /usr/sbin/CROND -n
+root     25000  0.0  0.1 113188  2656 ?        Ss   10:48   0:00 /bin/sh -c bash /etc/hetrixtools/hetrixtools_agent.sh >> /etc/hetrixtools/hetrixtools_cron.lo
+root     25001  0.1  0.1 113188  3140 ?        S    10:48   0:00 bash /etc/hetrixtools/hetrixtools_agent.sh
+root     26405  0.1  0.4 158760  8788 ?        Ss   10:48   0:00 sshd: root [priv]
+sshd     26406  0.0  0.3 112876  6156 ?        S    10:48   0:00 sshd: root [net]
+root     26718  0.0  0.0 113188  1728 ?        S    10:48   0:00 bash /etc/hetrixtools/hetrixtools_agent.sh
+root     26719  0.0  0.1 152624  3512 ?        S    10:48   0:00 vmstat 3 2
+root     26720  0.0  0.0 108000  1868 ?        S    10:48   0:00 tail -1
+root     26721  0.0  0.1 155372  3944 pts/1    R+   10:48   0:00 ps aux
+root     27062  0.0  0.4 107476  9036 ?        S    04:34   0:00 /sbin/dhclient -d -q -sf /usr/libexec/nm-dhcp-helper -pf /var/run/dhclient-eth0.pid -lf /var/
